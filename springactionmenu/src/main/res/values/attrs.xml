@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ActionMenu Property -->
+    <declare-styleable name="ActionMenu">
+        <attr name="circleRadius" format="dimension" />
+        <attr name="dimens" format="dimension" />
+        <attr name="animationDuration" format="integer" />
+        <attr name="buttonNormalColor" format="color" />
+        <attr name="buttonPressColor" format="color" />
+        <attr name="actionMenuIcon" format="reference" />
+        <attr name="actionMenuOnIcon" format="reference" />
+        <attr name="expandDirect"/>
+    </declare-styleable>
+
+    <!-- direct enum -->
+    <attr name="expandDirect">
+        <enum name="expandDirectTop" value="0"/>
+        <enum name="expandDirectDown" value="1"/>
+        <enum name="expandDirectLeft" value="2"/>
+        <enum name="expandDirectRight" value="3"/>
+    </attr>
+
+</resources>
