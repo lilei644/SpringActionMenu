@@ -75,6 +75,7 @@ actionMenu.setItemClickListener(new OnActionItemClickListener() {
 ```
 
 * attr property &nbsp; 属性
+
 |name|format|description|default|
 |:---:|:---:|:---:|:---:|
 | circleRadius| dimension| Round menu radius| 30
@@ -82,8 +83,8 @@ actionMenu.setItemClickListener(new OnActionItemClickListener() {
 | animationDuration| integer| Animation duration| 500
 | buttonNormalColor| color| Button The color in normal condition|  Color.RED
 | buttonPressColor| color|The color of the button click status|Color.RED
-| actionMenuIcon| reference| Menu icon|
-| actionMenuOnIcon| reference| The icon when the menu is open|
+| actionMenuIcon| reference| Menu icon| --
+| actionMenuOnIcon| reference| The icon when the menu is open| --
 | expandDirect| enum | The direction of the menu extension|expandDirectTop
 
 ## Requirements &nbsp;版本要求
