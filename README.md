@@ -51,35 +51,47 @@ dependencies {
 * add menu items &nbsp; 添加菜单组件添加菜单组件添加
 
 ```
-        ActionMenu actionMenu = (ActionMenu) findViewById(R.id.actionMenu);
+ActionMenu actionMenu = (ActionMenu) findViewById(R.id.actionMenu);
 
-        // add menu items
-        actionMenu.addView(R.drawable.search, getItemColor(R.color.menuNormalInfo), getItemColor(R.color.menuPressInfo));
-        actionMenu.addView(R.drawable.like, getItemColor(R.color.menuNormalRed), getItemColor(R.color.menuPressRed));
-        actionMenu.addView(R.drawable.write);
+// add menu items
+actionMenu.addView(R.drawable.search, getItemColor(R.color.menuNormalInfo), getItemColor(R.color.menuPressInfo));
+actionMenu.addView(R.drawable.like, getItemColor(R.color.menuNormalRed), getItemColor(R.color.menuPressRed));
+actionMenu.addView(R.drawable.write);
 ```
 
 * delegate &nbsp;代理监听
 ```
-        actionMenu.setItemClickListener(new OnActionItemClickListener() {
-            @Override
-            public void onItemClick(int index) {
+actionMenu.setItemClickListener(new OnActionItemClickListener() {
+    @Override
+    public void onItemClick(int index) {
 
-            }
+    }
 
-            @Override
-            public void onAnimationEnd(boolean isOpen) {
+    @Override
+    public void onAnimationEnd(boolean isOpen) {
 
-            }
-        });
+    }
+});
 ```
+
+* attr property &nbsp; 属性
+|name|format|description|default|
+|:---:|:---:|:---:|:---:|
+| circleRadius| dimension| Round menu radius| 30
+| dimens| dimension| The spacing of the menu items| 30
+| animationDuration| integer| Animation duration| 500
+| buttonNormalColor| color| Button The color in normal condition|  Color.RED
+| buttonPressColor| color|The color of the button click status|Color.RED
+| actionMenuIcon| reference| Menu icon|
+| actionMenuOnIcon| reference| The icon when the menu is open|
+| expandDirect| enum | The direction of the menu extension|expandDirectTop
 
 ## Requirements &nbsp;版本要求
 Android  14+
 
 ## License
 ```
-Copyright 2016 lilei644
+   Copyright 2016 lilei644
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
