@@ -5,6 +5,10 @@ Preview  预览
 -------------
 ![SpringActionMenu](https://github.com/lilei644/SpringActionMenu/blob/master/preview/preview.gif)
 
+  
+  Gif there is distortion, the actual effect is more flexible
+  gif存在失真，实际效果更加丝滑有弹性
+
 ## Installation &nbsp;安装
 * gradle
 
