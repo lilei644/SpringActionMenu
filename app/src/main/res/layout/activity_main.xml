@@ -11,9 +11,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.lilei.example.MainActivity">
 
+    <com.lilei.springactionmenu.ActionMenu
+        android:id="@+id/actionMenuTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:circleRadius="25dp"
+        app:dimens="10dp"
+        app:animationDuration="3000"
+        app:expandDirect="expandDirectRight"
+        app:buttonNormalColor="#ff5bc0de"
+        app:buttonPressColor="#ff39b3d7"
+        app:actionMenuIcon="@drawable/add"
+        app:actionMenuOnIcon="@drawable/close"
+        />
+
 
     <com.lilei.springactionmenu.ActionMenu
-        android:id="@+id/actionMenu"
+        android:id="@+id/actionMenuBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -21,7 +35,7 @@
         android:layout_marginBottom="20dp"
         app:circleRadius="25dp"
         app:dimens="10dp"
-        app:animationDuration="2500"
+        app:animationDuration="3000"
         app:expandDirect="expandDirectTop"
         app:buttonNormalColor="#ff5bc0de"
         app:buttonPressColor="#ff39b3d7"
