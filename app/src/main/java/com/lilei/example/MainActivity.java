@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         actionMenuBottom = (ActionMenu) findViewById(R.id.actionMenuBottom);
 
         // add menu items
-        actionMenuTop.addView(R.drawable.search, getItemColor(R.color.menuNormalInfo), getItemColor(R.color.menuPressInfo));
+        actionMenuTop.addView(R.drawable.ic_zoom_in_black_24dp, getItemColor(R.color.menuNormalInfo), getItemColor(R.color.menuPressInfo));
         actionMenuTop.addView(R.drawable.like, getItemColor(R.color.menuNormalRed), getItemColor(R.color.menuPressRed));
         actionMenuTop.addView(R.drawable.write);
 

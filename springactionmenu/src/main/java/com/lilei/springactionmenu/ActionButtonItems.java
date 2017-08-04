@@ -4,12 +4,17 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -47,7 +52,11 @@ public class ActionButtonItems extends View implements ValueAnimator.AnimatorUpd
     public ActionButtonItems(Context context,int tag, int circleRadius, int dimens, int expandDirect, int iconId, int normalColor, int pressColor) {
 
         this(context, tag, circleRadius, dimens, expandDirect, normalColor, pressColor, false);
-        mBitmap = ((BitmapDrawable)getResources().getDrawable(iconId)).getBitmap();
+        try {
+            mBitmap = ((BitmapDrawable)getResources().getDrawable(iconId)).getBitmap();
+        } catch (Exception e) {
+            mBitmap = getBitmapFromVectorDrawable(context, iconId);
+        }
     }
 
     public ActionButtonItems(Context context,int tag, int circleRadius, int dimens,
@@ -338,5 +347,23 @@ public class ActionButtonItems extends View implements ValueAnimator.AnimatorUpd
         }
         mBitmap = ((BitmapDrawable)getResources().getDrawable(menuIcon)).getBitmap();
         mOnBitmap = ((BitmapDrawable)getResources().getDrawable(menuOnIcon)).getBitmap();
+    }
+
+    /**
+     * vector to bitmap
+     */
+    private Bitmap getBitmapFromVectorDrawable(Context context, int drawableId) {
+        Drawable drawable = ContextCompat.getDrawable(context, drawableId);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            drawable = (DrawableCompat.wrap(drawable)).mutate();
+        }
+
+        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
+                drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+
+        return bitmap;
     }
 }
