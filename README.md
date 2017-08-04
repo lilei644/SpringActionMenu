@@ -28,7 +28,7 @@ allprojects {
 Step 2. Add the dependency
 
 dependencies {
-            compile 'com.github.lilei644:SpringActionMenu:1.0.0'
+            compile 'com.github.lilei644:SpringActionMenu:1.0.1'
     }
 ```
 
